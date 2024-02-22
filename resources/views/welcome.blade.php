@@ -44,7 +44,7 @@
             </a>
           </h1>
            <div class="navbar-nav flex-row order-md-last">
-            <div class="nav-item d-none d-md-flex me-3"> 
+            <div class="nav-item d-none d-md-flex me-3">
               <div class="btn-list">
                 <!-- <a href="https://github.com/tabler/tabler" class="btn" target="_blank" rel="noreferrer"> -->
                   <!-- Download SVG icon from http://tabler-icons.io/i/brand-github -->
@@ -158,7 +158,7 @@
               <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
                 <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
                 <div class="d-none d-xl-block ps-2">
-                  <div>Nanda Yunan</div>
+                  <div>{{ Auth::user()->name }}</div>
                   <div class="mt-1 small text-muted">Kelas 12</div>
                 </div>
               </a>
@@ -197,7 +197,7 @@
                     <span class="nav-link-title">
                       Interface
                     </span>
-                  </a> --> 
+                  </a> -->
                   <div class="dropdown-menu">
                     <div class="dropdown-menu-columns">
                       <div class="dropdown-menu-column">
@@ -391,7 +391,7 @@
                     <span class="nav-link-title">
                       Extra
                     </span>
-                  </a> --> 
+                  </a> -->
                   <div class="dropdown-menu">
                     <div class="dropdown-menu-columns">
                       <div class="dropdown-menu-column">
@@ -484,7 +484,7 @@
                     <span class="nav-link-title">
                       Layout
                     </span>
-                  </a> --> 
+                  </a> -->
                   <div class="dropdown-menu">
                     <div class="dropdown-menu-columns">
                       <div class="dropdown-menu-column">
@@ -552,7 +552,7 @@
                     <span class="nav-link-title">
                       Help
                     </span>
-                  </a> --> 
+                  </a> -->
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="https://tabler.io/docs" target="_blank" rel="noopener">
                       Documentation
@@ -752,8 +752,8 @@
                       <div class="card-body">
                         <div class="row align-items-center">
                           <div class="col-auto">
-                              <span class="bg-primary text-white avatar"> <!--  Download SVG icon from http://tabler-icons.io/i/currency-dollar --> 
-                              
+                              <span class="bg-primary text-white avatar"> <!--  Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
+
                             </span>
                           </div>
                           <div class="col">
@@ -774,7 +774,7 @@
                         <div class="row align-items-center">
                           <div class="col-auto">
                             <span class="bg-green text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/shopping-cart -->
-                              
+
                             </span>
                           </div>
                           <div class="col">
@@ -782,7 +782,7 @@
                               10 Mapel
                             </div>
                             <div class="text-muted">
-                              
+
                             </div>
                           </div>
                         </div>
@@ -795,7 +795,7 @@
                         <div class="row align-items-center">
                           <div class="col-auto">
                             <span class="bg-twitter text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
-                              
+
                             </span>
                           </div>
                           <div class="col">
@@ -816,7 +816,7 @@
                         <div class="row align-items-center">
                           <div class="col-auto">
                             <span class="bg-facebook text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-facebook -->
-                              
+
                             </span>
                           </div>
                           <div class="col">
