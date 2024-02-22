@@ -20452,6 +20452,8 @@ a.card-title:hover {
 .card-body > :last-child {
   margin-bottom: 0;
 }
+
+
 .card-sm > .card-body {
   padding: 1rem;
 }

@@ -78,16 +78,16 @@
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
                   <div class="card">
                     <div class="card-header">
-                      <h3 class="card-title">Last updates</h3>
+                      <h3 class="card-title">Pemberitahuan</h3>
                     </div>
                     <div class="list-group list-group-flush list-group-hoverable">
                       <div class="list-group-item">
                         <div class="row align-items-center">
                           <div class="col-auto"><span class="status-dot status-dot-animated bg-red d-block"></span></div>
                           <div class="col text-truncate">
-                            <a href="#" class="text-body d-block">Example 1</a>
+                            <a href="#" class="text-body d-block">Tugas Matematika</a>
                             <div class="d-block text-muted text-truncate mt-n1">
-                              Change deprecated html tags to text decoration classes (#29604)
+                              Tugas tentang materi 1 yaitu Matrix
                             </div>
                           </div>
                           <div class="col-auto">
@@ -102,9 +102,9 @@
                         <div class="row align-items-center">
                           <div class="col-auto"><span class="status-dot d-block"></span></div>
                           <div class="col text-truncate">
-                            <a href="#" class="text-body d-block">Example 2</a>
+                            <a href="#" class="text-body d-block">Tugas Sejarah Indonesia</a>
                             <div class="d-block text-muted text-truncate mt-n1">
-                              justify-content:between ⇒ justify-content:space-between (#29734)
+                              Review Jurnal
                             </div>
                           </div>
                           <div class="col-auto">
@@ -119,9 +119,9 @@
                         <div class="row align-items-center">
                           <div class="col-auto"><span class="status-dot d-block"></span></div>
                           <div class="col text-truncate">
-                            <a href="#" class="text-body d-block">Example 3</a>
+                            <a href="#" class="text-body d-block">Tugas PAI</a>
                             <div class="d-block text-muted text-truncate mt-n1">
-                              Update change-version.js (#29736)
+                              Sebutkan 25 nama nabi
                             </div>
                           </div>
                           <div class="col-auto">
@@ -136,9 +136,9 @@
                         <div class="row align-items-center">
                           <div class="col-auto"><span class="status-dot status-dot-animated bg-green d-block"></span></div>
                           <div class="col text-truncate">
-                            <a href="#" class="text-body d-block">Example 4</a>
+                            <a href="#" class="text-body d-block">Tugas 4</a>
                             <div class="d-block text-muted text-truncate mt-n1">
-                              Regenerate package-lock.json (#29730)
+                              Sebutkan UUD tahun 1945
                             </div>
                           </div>
                           <div class="col-auto">
@@ -163,11 +163,11 @@
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <a href="#" class="dropdown-item">Status</a>
+                <!-- <a href="#" class="dropdown-item">Status</a> -->
                 <a href="./profile.html" class="dropdown-item">Profile</a>
-                <a href="#" class="dropdown-item">Feedback</a>
-                <div class="dropdown-divider"></div>
-                <a href="./settings.html" class="dropdown-item">Settings</a>
+                <!-- <a href="#" class="dropdown-item">Feedback</a> -->
+                <!-- <div class="dropdown-divider"></div>
+                <a href="./settings.html" class="dropdown-item">Settings</a> -->
                 <a href="./sign-in.html" class="dropdown-item">Logout</a>
               </div>
             </div>
@@ -601,24 +601,24 @@
                 </h2>
               </div>
               <!-- Page title actions -->
-              <div class="col-auto ms-auto d-print-none">
+              <!-- <div class="col-auto ms-auto d-print-none">
                 <div class="btn-list">
                   <span class="d-none d-sm-inline">
                     <a href="#" class="btn">
                       New view
                     </a>
-                  </span>
-                  <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+                  </span> -->
+                  <!-- <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report"> -->
                     <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
                     Create new schedule
                   </a>
                   <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
-                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                    Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
                   </a>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -2132,8 +2132,8 @@
       			curve: "smooth",
       		},
       		series: [{
-      			name: "Profits",
-      			data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67]
+      			name: "Rata - rata",
+      			data: [60, 75, 84, 88, 66, 74, 65, 71, 77, 69, 62, 51, 75, 81, 95, 37, 93, 63, 61, 67, 74, 73, 89, 86, 99, 72, 61, 65, 71, 77]
       		}],
       		tooltip: {
       			theme: 'dark'
@@ -2194,10 +2194,10 @@
       			curve: "smooth",
       		},
       		series: [{
-      			name: "May",
+      			name: "Hadir",
       			data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 4, 46, 39, 62, 51, 35, 41, 67]
       		},{
-      			name: "April",
+      			name: "Tidak Hadir",
       			data: [93, 54, 51, 24, 35, 35, 31, 67, 19, 43, 28, 36, 62, 61, 27, 39, 35, 41, 27, 35, 51, 46, 62, 37, 44, 53, 41, 65, 39, 37]
       		}],
       		tooltip: {
@@ -2258,7 +2258,7 @@
       			opacity: 1,
       		},
       		series: [{
-      			name: "Profits",
+      			name: "Keaktifan",
       			data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67]
       		}],
       		tooltip: {
