@@ -5,6 +5,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TugasController;
+use App\Http\Controllers\TugasSubmitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/presensi', [PresensiController::class, 'index'])->name('presensi.index');
 
     Route::get('/tugas', [TugasController::class, 'index'])->name('tugas.index');
+
+    Route::get('/tugas/submit', [TugasSubmitController::class, 'index'])->name('tugasSubmit.index');
 });
 
 

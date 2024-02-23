@@ -87,7 +87,7 @@
 						<div class="desc">
 							<h3><a href="#">Matematika</a></h3>
 							<p>Matematika SMA: Dasar penting untuk pemahaman konsep matematis, termasuk aljabar, geometri, trigonometri, kalkulus, dan statistik. Membantu siswa mengembangkan pemecahan masalah, pemikiran logis, dan abstrak, yang relevan dalam kehidupan sehari-hari dan karier di berbagai bidang ilmiah dan teknis.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
+							<span><a href="{{ route('tugasSubmit.index') }}" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
 						</div>
 					</div>
 				</div>
