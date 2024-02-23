@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TugasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,5 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 
     Route::get('/presensi', [PresensiController::class, 'index'])->name('presensi.index');
+
+    Route::get('/tugas', [TugasController::class, 'index'])->name('tugas.index');
 });
+
 
