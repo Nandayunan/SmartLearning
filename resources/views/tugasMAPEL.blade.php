@@ -1,220 +1,129 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Education &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
-
-	<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+<!doctype html>
+<!--
+* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
+* @version 1.0.0-beta19
+* @link https://tabler.io
+* Copyright 2018-2023 The Tabler Authors
+* Copyright 2018-2023 codecalm.net Paweł Kuna
+* Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>SMART LEARNING !.</title>
+    <!-- CSS files -->
+    <link href="./dist/css/tabler.min.css?1684106062" rel="stylesheet"/>
+    <link href="./dist/css/tabler-flags.min.css?1684106062" rel="stylesheet"/>
+    <link href="./dist/css/tabler-payments.min.css?1684106062" rel="stylesheet"/>
+    <link href="./dist/css/tabler-vendors.min.css?1684106062" rel="stylesheet"/>
+    <link href="./dist/css/demo.min.css?1684106062" rel="stylesheet"/>
+    <style>
+      @import url('https://rsms.me/inter/inter.css');
+      :root {
+      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+      }
+      body {
+      	font-feature-settings: "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body >
+    <script src="./dist/js/demo-theme.min.js?1684106062"></script>
+    <div class="page">
+      <!-- Navbar -->
+      @include('partials.header-brand')
+      @include('partials.header-navigation')
+      <div class="page-wrapper">
+        <!-- Page header -->
+        <div class="page-header d-print-none">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+                <!-- Page pre-title -->
+                <div class="page-pretitle">
+                  Info
+                </div>
+                <h2 class="page-title">
+                  User
+                </h2>
+              </div>
 	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-
-	<!-- Pricing -->
-	<link rel="stylesheet" href="css/pricing.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="top">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 text-right">
-						<p class="site">www.yourdomainname.com</p>
-						<p class="num">Call: +01 123 456 7890</p>
-						<ul class="fh5co-social">
-							<li><a href="#"><i class="icon-facebook2"></i></a></li>
-							<li><a href="#"><i class="icon-twitter2"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="top-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a></div>
-					</div>
-					<div class="col-xs-10 text-right menu-1">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li class="active"><a href="courses.html">Courses</a></li>
-							<li><a href="teacher.html">Teacher</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="pricing.html">Pricing</a></li>
-							<li class="has-dropdown">
-								<a href="blog.html">Blog</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html">Contact</a></li>
-							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
-						</ul>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</nav>
-	
-	<aside id="fh5co-hero">
-		<div class="flexslider">
-			<ul class="slides">
-		   	<li style="background-image: url(images/img_bg_4.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-			   					<h1 class="heading-section">Our Course</h1>
-									<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		  	</ul>
-	  	</div>
 	</aside>
 
 	<div id="fh5co-course">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Our Course</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2>Mata Pelajaran</h2>
+					<p>Mata Pelajaran beriikut adalah Mata Pelajaran bagi siswa Jurusan IPA</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
+						<a href="#" class="course-img" style="background-image: url(./images/math.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Web Master</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<h3><a href="#">Matematika</a></h3>
+							<p>Matematika SMA: Dasar penting untuk pemahaman konsep matematis, termasuk aljabar, geometri, trigonometri, kalkulus, dan statistik. Membantu siswa mengembangkan pemecahan masalah, pemikiran logis, dan abstrak, yang relevan dalam kehidupan sehari-hari dan karier di berbagai bidang ilmiah dan teknis.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-2.jpg);">
+						<a href="#" class="course-img" style="background-image: url(images/indo.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Business &amp; Accounting</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<h3><a href="#">Bahasa Indonesia</a></h3>
+							<p>Bahasa Indonesia di SMA mengajarkan penggunaan bahasa yang efektif dan tepat. Siswa mempelajari keterampilan berbicara, membaca, menulis, dan mendengarkan. Materi meliputi tata bahasa, kosakata, dan karya sastra Indonesia. Tujuannya adalah membentuk siswa menjadi komunikator yang baik dan menghargai kekayaan budaya.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-3.jpg);">
+						<a href="#" class="course-img" style="background-image: url(images/fisika.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<h3><a href="#">Fisika</a></h3>
+							<p>Fisika di SMA adalah mata pelajaran yang mempelajari tentang sifat, gerak, energi, dan struktur materi. Melalui pembelajaran ini, siswa belajar menguasai konsep-konsep dasar fisika seperti mekanika, termal, listrik, magnetisme, optika, dan lainnya.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-4.jpg);">
+						<a href="#" class="course-img" style="background-image: url(images/kimia.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<h3><a href="#">Kimia</a></h3>
+							<p>Kimia di SMA adalah mata pelajaran yang mempelajari tentang sifat, struktur, dan reaksi zat. Melalui pembelajaran ini, siswa belajar mengenai unsur, senyawa, ikatan kimia, reaksi kimia, serta berbagai konsep seperti termokimia, kinetika reaksi, dan kesetimbangan kimia. Mereka juga memahami aplikasi kimia dalam kehidupan sehari-hari, industri, dan lingkungan.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-5.jpg);">
+						<a href="#" class="course-img" style="background-image: url(images/biologi.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<h3><a href="#">Biologi</a></h3>
+							<p>Biologi di SMA adalah mata pelajaran yang mempelajari tentang kehidupan, mulai dari organisme mikroskopis hingga organisme kompleks. Melalui pembelajaran ini, siswa belajar tentang struktur sel, fungsi organisme, evolusi, genetika, ekologi, dan berbagai konsep lainnya yang terkait dengan kehidupan. Mereka juga memahami hubungan antara organisme dan lingkungannya serta pentingnya keseimbangan ekosistem.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-6.jpg);">
+						<a href="#" class="course-img" style="background-image: url(images/english.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<h3><a href="#">Bahasa Inggris</h3>
+							<p>Bahasa Inggris di SMA adalah mata pelajaran yang mempelajari keterampilan berbahasa Inggris, termasuk mendengarkan, berbicara, membaca, dan menulis. Melalui pembelajaran ini, siswa belajar tentang tata bahasa, kosakata, serta berbagai konteks penggunaan bahasa Inggris, seperti dalam percakapan sehari-hari, bacaan, dan penulisan teks.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
 						</div>
 					</div>
 				</div>
@@ -227,79 +136,15 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 animate-box">
 				<div class="date-counter text-center">
-					<h2>Get 400 of Online Courses for Free</h2>
-					<h3>By Mike Smith</h3>
+					<h2>400 hari menuju UTBK!</h2>
+					<h3>Persiapkan diri anda</h3>
 					<div class="simply-countdown simply-countdown-one"></div>
-					<p><strong>Limited Offer, Hurry Up!</strong></p>
-					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
+					<p><strong>Kumpulkan tugas anda!</strong></p>
+					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Login</a></p>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-3 fh5co-widget">
-					<h3>About Education</h3>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-				</div>
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-					<h3>Learning</h3>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Course</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-					<h3>Learn &amp; Grow</h3>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-					<h3>Engage us</h3>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Marketing</a></li>
-						<li><a href="#">Visual Assistant</a></li>
-						<li><a href="#">System Analysis</a></li>
-						<li><a href="#">Advertise</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-					<h3>Legal</h3>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
 	</div>
 
 	<div class="gototop js-top">
