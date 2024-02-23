@@ -1,26 +1,3 @@
-<?php
-	
-  session_start();
-  if ( !isset($_SESSION["login"]) ) {
-    header("Location: login.php");
-    exit;
-}
-	include "koneksi.php";
-	/*
-	if(isset($_session['id'])){
-		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';	
-	}*/		
-	$dosen_id = $_SESSION['dosen_id'];
-	$dosen_name = $_SESSION["dosen_user_name"];
-    $dosen_foto = $_SESSION["dosen_user_foto"];
-    
-    $tgl=date("d-m-Y");
-	$jumlah_dosen=mysqli_num_rows(mysqli_query($koneksi,"select * from dosen where status='Dosen'"));
-	$jumlah_kelas=mysqli_num_rows(mysqli_query($koneksi,"select * from kelas"));
-	$jumlah_mahasiswa=mysqli_num_rows(mysqli_query($koneksi,"select * from mahasiswa"));
-	
-	
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +7,15 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Absensi | SMA VICTORY!</title>
+  <title>Presensi | SMA VICTORY!</title>
 
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/ncss/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="./dist/css/styleadmin.css" rel="stylesheet">
-  <link href="./dist/css/styleadmin2.css" rel="stylesheet">
+  <link href="/dist/css/styleadmin.css" rel="stylesheet">
+  <link href="/dist/css/styleadmin2.css" rel="stylesheet">
+  <link href="/ncss/dist/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -68,15 +46,10 @@
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider">
 
-     
+
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="absensi.php">
-          <i class="fas fa-fw fa-user-check"></i>
-          <span>Absensi</span></a>
-      </li>
+
 
       <!-- Nav Item - Tables -->
       <!-- <li class="nav-item">
@@ -89,9 +62,6 @@
       <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
 
     </ul>
     <!-- End of Sidebar -->
@@ -138,8 +108,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $dosen_name ;?></span>
-                <img class="img-profile rounded-circle" src="img/<?= $dosen_foto; ?>">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                <img class="img-profile rounded-circle" src="/images/user-profile-icon-free-vector.jpg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -167,56 +137,46 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Absensi <?php if($_GET["kelas"] == "001"){echo 'R6A';}elseif($_GET["kelas"] == "002"){echo'R6X';}?>  <?=$_GET["jadwal"].' ('.$tgl.')'?> </h1>
+          <h1 class="h3 mb-4 text-gray-800">Presensi Kelas</h1>
 
             <!-- DataTales -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Daftar Siswa </h6>
+              <h6 class="m-0 font-weight-bold text-primary">Siswa</h6>
             </div>
-            <div class="card-body">             
-                <form role="form" action="simpanabsensi.php?id=<?php echo $_GET['kelas'];?>" method="post" name="postform" enctype="multipart/form-data">
+            <div class="card-body">
+                <form role="form" action="" method="post" name="postform" enctype="multipart/form-data">
               <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr align="center">
                       <th>No</th>
                       <th>Profil</th>
-                      <th>NPM</th>
+                      <th>NISN</th>
                       <th>Nama</th>
                       <th>Status</th>
                     </tr>
                   </thead>
                   <tbody align="center">
-                    <?php
-                    $id_kelas=$_GET['kelas'];
-                    $sql="SELECT * FROM mahasiswa WHERE id_kelas='$id_kelas'";
-                    $query=mysqli_query($koneksi,$sql);
-                    $i = 1;
-                    while ($data=mysqli_fetch_array($query)){
-                        $npm=$data["npm"];
-                        $nama=$data["nama"];
-                    ?>
                     <tr>
-                      <td><?=$i++;?></td>
-                      <td><img class="img-profile rounded-circle" style="width:50px;height:50px;" src="img/<?= $data["foto"];?>"></td>
-                      <td><?= $npm;?></td>
-                      <td><?= $nama;?></td>
-                      <td> 
-                      <label class="radio-inline"><input type="radio" name="<?= 'ket'.$data["npm"];?>" id="<?php echo 'opsi1'.$npm;?>" value="Hadir">Hadir</label>
-                      <label class="radio-inline"><input type="radio" name="<?= 'ket'.$data["npm"];?>" id="<?php echo 'opsi1'.$npm;?>" value="Absen">Absen</label>
-                      <label class="radio-inline"><input type="radio" name="<?= 'ket'.$data["npm"];?>" id="<?php echo 'opsi1'.$npm;?>" value="Sakit">Sakit</label>
-                      <label class="radio-inline"><input type="radio" name="<?= 'ket'.$data["npm"];?>" id="<?php echo 'opsi1'.$npm;?>" value="Izin">Izin</label>
+                      <td>1</td>
+                      <td><img class="img-profile rounded-circle" style="width:50px;height:50px;" src="/images/user-profile-icon-free-vector.jpg"></td>
+                      <td>{{ Auth::user()->email }}</td>
+                      <td>{{ Auth::user()->name }}</td>
+                      <td>
+                      <label class="radio-inline"><input type="radio" name="" value="Hadir">Hadir</label>
+                      <label class="radio-inline"><input type="radio" name="" value="Absen">Absen</label>
+                      <label class="radio-inline"><input type="radio" name="" value="Sakit">Sakit</label>
+                      <label class="radio-inline"><input type="radio" name="" value="Izin">Izin</label>
 
                       </td>
                     </tr>
-                    <?php }?>
                     </tbody>
                 </table>
             </div>
             <button type="submit" class="btn btn-primary mt-4 col-md-2 offset-10">Simpan Data</button>
             </form>
-            
+
             </div>
           </div>
         </div>
@@ -229,7 +189,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Bayu Tutor 2023</span>
+            <span>Copyright &copy; Smart Learning 2024</span>
           </div>
         </div>
       </footer>
@@ -271,7 +231,7 @@
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  
+
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 

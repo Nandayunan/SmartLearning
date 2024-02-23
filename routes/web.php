@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [LogoutController::class, 'store'])->name('logout.store');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+
+    Route::get('/presensi', [PresensiController::class, 'index'])->name('presensi.index');
 });
+
