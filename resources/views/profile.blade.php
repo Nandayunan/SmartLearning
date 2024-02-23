@@ -41,7 +41,7 @@
           <div class="container">
             <div class="row align-items-center">
               <div class="col-auto">
-                <span class="avatar avatar-lg rounded" style="background-image: url(./static/avatars/003m.jpg)"></span>
+                <span class="avatar avatar-lg rounded" style="background-image: url(/images/user-profile-icon-free-vector.jpg)"></span>
               </div>
               <div class="col">
                 <h1 class="fw-bold">{{ Auth::user()->name }}</h1>
@@ -56,7 +56,7 @@
                   <div class="list-inline-item">
                     <!-- Download SVG icon from http://tabler-icons.io/i/mail -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
-                    <a href="#" class="text-reset">nandayunan@gmail.com</a>
+                    <a href="#" class="text-reset">{{ Auth::user()->email }}</a>
                   </div>
                   <div class="list-inline-item">
                     <!-- Download SVG icon from http://tabler-icons.io/i/cake -->
