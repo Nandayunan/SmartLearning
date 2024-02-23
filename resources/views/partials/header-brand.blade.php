@@ -5,7 +5,7 @@
           </button>
           <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
             <a href="{{ route('dashboard.index') }}">
-              <img src="./static/logo.svg" width="110" height="32" alt="SMA VICTORY" class="navbar-brand-image">
+              SMA VICTORY
             </a>
           </h1>
            <div class="navbar-nav flex-row order-md-last">
