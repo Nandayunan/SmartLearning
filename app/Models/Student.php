@@ -15,4 +15,9 @@ class Student extends Model
     {
         return $this->belongsToMany(Subject::class);
     }
+
+    public function presensi()
+    {
+        return $this->hasMany(Presensi::class);
+    }
 }

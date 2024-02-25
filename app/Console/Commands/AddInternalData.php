@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Student;
 use App\Models\User;
+use App\Models\Presensi;
 use Illuminate\Console\Command;
 
 class AddInternalData extends Command
@@ -36,6 +37,15 @@ class AddInternalData extends Command
         Student::create([
             'id' => $user->id,
             'nis' => '1234568999',
+        ]);
+
+        Presensi::create([
+            'student_id' => $user->id,
+            'status' => 'HADIR',
+        ]);
+        Presensi::create([
+            'student_id' => $user->id,
+            'status' => 'SAKIT',
         ]);
     }
 }

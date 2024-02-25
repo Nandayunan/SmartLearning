@@ -158,10 +158,19 @@
                     </tr>
                   </thead>
                   <tbody align="center">
+                    @foreach($presensi as $p)
                     <tr>
-                      <td>1</td>
+                      <td>{{ $loop->index + 1 }}</td>
                       <td><img class="img-profile rounded-circle" style="width:50px;height:50px;" src="/images/user-profile-icon-free-vector.jpg"></td>
-                      <td>{{ Auth::user()->email }}</td>
+                      <td>{{ Auth::user()->student->nis }}</td>
+                      <td>{{ Auth::user()->name }}</td>
+                      <td>{{ $p->status }}</td>
+                    </tr>
+                    @endforeach
+                    <tr>
+                      <td>#</td>
+                      <td><img class="img-profile rounded-circle" style="width:50px;height:50px;" src="/images/user-profile-icon-free-vector.jpg"></td>
+                      <td>{{ Auth::user()->student->nis }}</td>
                       <td>{{ Auth::user()->name }}</td>
                       <td>
                       <label class="radio-inline"><input type="radio" name="" value="Hadir">Hadir</label>
