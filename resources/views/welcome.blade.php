@@ -194,7 +194,7 @@
                           </div>
                           <div class="col">
                             <div class="font-weight-medium">
-                              10 Mapel
+                              {{ $subjectCount }} Mapel
                             </div>
                             <div class="text-muted">
 
