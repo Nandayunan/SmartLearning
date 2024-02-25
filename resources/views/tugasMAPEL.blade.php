@@ -80,72 +80,21 @@
 				</div>
 			</div>
 			<div class="row">
+                @foreach($subjects as $subject)
 				<div class="col-md-6 animate-box">
 					<div class="course">
 						<a href="#" class="course-img" style="background-image: url(/dcss/images/math.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Matematika</a></h3>
-							<p>Matematika SMA: Dasar penting untuk pemahaman konsep matematis, termasuk aljabar, geometri, trigonometri, kalkulus, dan statistik. Membantu siswa mengembangkan pemecahan masalah, pemikiran logis, dan abstrak, yang relevan dalam kehidupan sehari-hari dan karier di berbagai bidang ilmiah dan teknis.</p>
+							<h3><a href="#">{{ $subject->name }}</a></h3>
+              <p>Tahun ajaran: {{ $subject->tahun_ajaran }} </p>
+              <p>Semester: {{ $subject->semester }} </p>
+              <p>KKM: {{ $subject->kkm}} </p>
 							<span><a href="{{ route('tugasSubmit.index') }}" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(/dcss/images/indo.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Bahasa Indonesia</a></h3>
-							<p>Bahasa Indonesia di SMA mengajarkan penggunaan bahasa yang efektif dan tepat. Siswa mempelajari keterampilan berbicara, membaca, menulis, dan mendengarkan. Materi meliputi tata bahasa, kosakata, dan karya sastra Indonesia. Tujuannya adalah membentuk siswa menjadi komunikator yang baik dan menghargai kekayaan budaya.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(/dcss/images/fisika.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Fisika</a></h3>
-							<p>Fisika di SMA adalah mata pelajaran yang mempelajari tentang sifat, gerak, energi, dan struktur materi. Melalui pembelajaran ini, siswa belajar menguasai konsep-konsep dasar fisika seperti mekanika, termal, listrik, magnetisme, optika, dan lainnya.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(/dcss/images/kimia.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Kimia</a></h3>
-							<p>Kimia di SMA adalah mata pelajaran yang mempelajari tentang sifat, struktur, dan reaksi zat. Melalui pembelajaran ini, siswa belajar mengenai unsur, senyawa, ikatan kimia, reaksi kimia, serta berbagai konsep seperti termokimia, kinetika reaksi, dan kesetimbangan kimia. Mereka juga memahami aplikasi kimia dalam kehidupan sehari-hari, industri, dan lingkungan.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(/dcss/images/biologi.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Biologi</a></h3>
-							<p>Biologi di SMA adalah mata pelajaran yang mempelajari tentang kehidupan, mulai dari organisme mikroskopis hingga organisme kompleks. Melalui pembelajaran ini, siswa belajar tentang struktur sel, fungsi organisme, evolusi, genetika, ekologi, dan berbagai konsep lainnya yang terkait dengan kehidupan. Mereka juga memahami hubungan antara organisme dan lingkungannya serta pentingnya keseimbangan ekosistem.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(/dcss/images/english.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Bahasa Inggris</h3>
-							<p>Bahasa Inggris di SMA adalah mata pelajaran yang mempelajari keterampilan berbahasa Inggris, termasuk mendengarkan, berbicara, membaca, dan menulis. Melalui pembelajaran ini, siswa belajar tentang tata bahasa, kosakata, serta berbagai konteks penggunaan bahasa Inggris, seperti dalam percakapan sehari-hari, bacaan, dan penulisan teks.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kumpulkan Tugas</a></span>
-						</div>
-					</div>
-				</div>
+                @endforeach
 			</div>
 		</div>
 	</div>

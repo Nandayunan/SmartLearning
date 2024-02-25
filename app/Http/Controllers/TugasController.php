@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TugasController extends Controller
 {
     public function index()
     {
-        return view('tugasMAPEL');
+        $subjects = Auth::user()->student->subjects;
+
+        return view('tugasMAPEL', compact('subjects'));
     }
 }
