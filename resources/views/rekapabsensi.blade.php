@@ -1,20 +1,4 @@
-<?php
-	
-  session_start();
-  if ( !isset($_SESSION["login"]) ) {
-    header("Location: login.php");
-    exit;
-}
-	include "koneksi.php";
-	/*
-	if(isset($_session['id'])){
-		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';	
-	}*/		
-	$dosen_id = $_SESSION['dosen_id'];
-	$dosen_name = $_SESSION["dosen_user_name"];
-	$dosen_foto = $_SESSION["dosen_user_foto"];
-	
-?>
+>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,12 +10,13 @@
 
   <title>Rekap Absensi | UNINDRA </title>
 
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/ncss/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="/dist/css/styleadmin.css" rel="stylesheet">
+  <link href="/dist/css/styleadmin2.css" rel="stylesheet">
+  <link href="/ncss/dist/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -64,7 +49,7 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-     
+
       <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="absensi.php">
@@ -133,8 +118,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $dosen_name ;?></span>
-                <img class="img-profile rounded-circle" src="img/<?= $dosen_foto; ?>">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                <img class="img-profile rounded-circle" src="/images/user-profile-icon-free-vector.jpg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -160,14 +145,10 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-        <?php
-		  $id_kelas=$_GET['kelas'];
-          $sql="SELECT DISTINCT(jadwal) FROM absensi WHERE id_kelas='$id_kelas'";
-		  $query=mysqli_query($koneksi,$sql);               		  
-	  ?>
+
           <!-- Page Heading -->
           <h1 class="mb-3 text-gray-800">Rekap Absensi</h1>
-            <a href="cetakabsensi.php?kelas=<?=$id_kelas;?>" class="btn btn-danger mb-4 btn-icon-split">
+            <a href="" class="btn btn-danger mb-4 btn-icon-split">
             <span class="icon text-gray-100">
                 <i class="fas fa-file"></i>
             </span>
@@ -178,7 +159,7 @@
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Daftar Mahasiswa </h6>
             </div>
-            <div class="card-body">             
+            <div class="card-body">
               <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -187,46 +168,25 @@
                       <th>Profil</th>
                       <th>NPM</th>
                       <th>Nama</th>
-                      <th>Aksi</th>
-                      <?php	
-						while ($data=mysqli_fetch_array($query)){?>
-						     <th><?=$data[0].' '?><br><a href="hapusabsensi.php?id=<?=$id_kelas?>&jadwal=<?=$data[0]?>">(Hapus)</a></th>  
-						<?php }?>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tbody align="center">
-                    <?php
-                    $id_kelas=$_GET['kelas'];
-                    $sql="SELECT * FROM mahasiswa WHERE id_kelas='$id_kelas'";
-                    $query=mysqli_query($koneksi,$sql);
-                    $i = 1;
-                    while ($data=mysqli_fetch_array($query)){
-                        $npm=$data["npm"];
-                        $nama=$data["nama"];
-                    ?>
+                    @foreach($students as $student)
                     <tr>
-                      <td><?=$i++;?></td>
-                      <td><img class="img-profile rounded-circle" style="width:50px;height:50px;" src="img/<?= $data["foto"];?>"></td>
-                      <td><?= $npm;?></td>
-                      <td><?= $nama;?></td>
-                      <td> <a href="detaileditabsensi.php?kelas=<?=$id_kelas;?>&npm=<?=$npm;?>" class="btn btn-warning btn-icon-split btn-sm">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-edit"></i>
-                                </span>
-                                <span class="text">Ubah</span>
-                            </a></td>
-                            <?php
-                            $sqla="SELECT * FROM absensi WHERE npm='$npm'";
-                            $querya=mysqli_query($koneksi,$sqla);
-                            while($data2=mysqli_fetch_array($querya)){
-                            ?>			           
-                                <td><?php echo $data2["keterangan"]; ?></td>
-                            <?php } ?>
-                            </tr>
-                    <?php } ?>
+                      <td>{{ $loop->index + 1 }}</td>
+                      <td><img class="img-profile rounded-circle" style="width:50px;height:50px;" src="/images/user-profile-icon-free-vector.jpg"></td>
+                      <td>{{ $student->nis }}</td>
+                      <td>{{ $student->user->name }}</td>
+                     <td>
+                        @json($student->presensi->countBy(function ($p) { return $p->status;}))
+                    </td>
+                     </tr>
+
+                    @endforeach
                     </tbody>
                 </table>
-            </div>    
+            </div>
             </div>
           </div>
         </div>
@@ -281,7 +241,7 @@
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  
+
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\NilaiContoller;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RekapAbsensiController;
 use App\Http\Controllers\TugasController;
 use App\Http\Controllers\TugasSubmitController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard-guru', [DashboardTeacherController::class, 'index'])->name('dashboardTeacher.index');
 
     Route::get('/nilai', [NilaiContoller::class, 'index'])->name('nilai.index');
+
+    Route::get('/rekap-absensi', [RekapAbsensiController::class, 'index'])->name('rekapAbsensi.index');
+
+    Route::get('/dev-view', function () {
+        return view('rekapabsensi');
+    });
 });
 
 
