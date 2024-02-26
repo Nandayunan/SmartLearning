@@ -22,7 +22,7 @@
     </style>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  
+
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
   </head>
@@ -31,7 +31,6 @@
     <div class="page">
       <!-- Navbar -->
       @include('partials.header-brand')
-      @include('partials.header-navigation')
       <div class="page-wrapper">
         <!-- Page header -->
         <div class="page-header d-print-none">
@@ -51,51 +50,22 @@
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Daftar Siswa </h6>
           </div>
-          <div class="card-body">             
+          <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr align="center">
                     <th>No</th>
-                    <th>Profil</th>
                     <th>NISN</th>
                     <th>Nama</th>
-                    <th>Kelas</th>
-                    <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody align="center">
-                  <?php
-                  $sql="SELECT * FROM mahasiswa";
-                  $query=mysqli_query($koneksi,$sql);
-                  $i = 1;
-                  while ($data=mysqli_fetch_array($query)){
-                      $npm=$data["npm"];
-                      $nama=$data["nama"];
-                      $foto=$data["foto"];
-                      $kelas=$data["id_kelas"];
-
-                  ?>
-                  <tr>
-                    <td><?=$i++;?></td>
-                    <td><img class="img-profile rounded-circle" style="width:50px;height:50px;" src="img/<?=$foto?>"></td>
-                    <td><?= $npm;?></td>
-                    <td><?= $nama;?></td>
-                    <td><?php if($kelas=="001"){
-                      echo 'R6A';
-                    }elseif($kelas=="002"){
-                      echo 'R6X';
-                    }
-                    ;?></td>
-                    
-                    <td><a href="#" class="btn btn-success btn-icon-split">
-                  <span class="icon text-white-50">
-                    <i class="fas fa-user"></i>
-                  </span>
-                  <span class="text">Edit</span>
-                </a></td>
-                  </tr>
-                  <?php }?>
+                    @foreach($students as $student)
+                        <td>{{ $loop->index + 1 }}</td>
+                        <td>{{ $student->nis }}</td>
+                        <td>{{ $student->user->name }}</td>
+                    @endforeach
                   </tbody>
               </table>
           </div>
