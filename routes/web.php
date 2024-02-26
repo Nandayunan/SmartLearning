@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardTeacherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\NilaiContoller;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TugasController;
@@ -41,4 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/tugas/submit', [TugasSubmitController::class, 'index'])->name('tugasSubmit.index');
 
     Route::get('/dashboard-guru', [DashboardTeacherController::class, 'index'])->name('dashboardTeacher.index');
+
+    Route::get('/nilai', [NilaiContoller::class, 'index'])->name('nilai.index');
 });
+
+

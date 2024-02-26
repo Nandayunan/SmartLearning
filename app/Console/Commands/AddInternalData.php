@@ -8,6 +8,7 @@ use App\Models\Subject;
 use App\Models\Presensi;
 use App\Models\Teacher;
 use App\Models\Kelas;
+use App\Models\Nilai;
 use Illuminate\Console\Command;
 
 class AddInternalData extends Command
@@ -102,6 +103,10 @@ class AddInternalData extends Command
             'teacher_id' => $user2->id
         ]);
 
-
+        Nilai::create([
+            'id' => Subject::first()->id,
+            'value' => 90,
+            'student_id' => $user->id
+        ]);
     }
 }
