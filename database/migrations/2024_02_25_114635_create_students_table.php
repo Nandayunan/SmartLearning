@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->foreignIdFor(User::class, 'id')->primary();
             $table->string('nis');
-            $table->foreignIdFor(Teacher::class);
+            $table->foreignIdFor(Teacher::class)->nullable();
             $table->timestamps();
         });
     }

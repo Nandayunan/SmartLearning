@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardTeacherController;
 use App\Http\Controllers\DetailKelasController;
+use App\Http\Controllers\DetailMapelController;
 use App\Http\Controllers\DetailSiswaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -53,6 +54,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/detail-kelas', [DetailKelasController::class, 'index'])->name('detailKelas.index');
 
     Route::get('/detail-siswa', [DetailSiswaController::class, 'index'])->name('detailSiswa.index');
+
+    Route::get('/detail-mapel', [DetailMapelController::class, 'index'])->name('detailMapel.index');
 });
 
 

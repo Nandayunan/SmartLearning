@@ -56,21 +56,21 @@
                 <thead>
                   <tr align="center">
                     <th>No</th>
-                    <th>NISN</th>
                     <th>Nama</th>
-                    <th>Aksi</th>
+                    <th>Tahun ajaran</th>
+                    <th>Semester</th>
+                    <th>KKM</th>
                   </tr>
                 </thead>
                 <tbody align="center">
-                    @foreach($students as $student)
+                    @foreach($subjects as $subject)
+                        <tr>
                         <td>{{ $loop->index + 1 }}</td>
-                        <td>{{ $student->nis }}</td>
-                        <td>{{ $student->user->name }}</td>
-                        <td>
-                            <form>
-                                <button>Hapus</button>
-                            </form>
-                        </td>
+                        <td>{{ $subject->name }}</td>
+                        <td>{{ $subject->tahun_ajaran }}</td>
+                        <td>{{ $subject->semester}}</td>
+                        <td>{{ $subject->kkm }}</td>
+                        </tr>
                     @endforeach
                   </tbody>
               </table>
