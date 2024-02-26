@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 
     Route::get('/presensi', [PresensiController::class, 'index'])->name('presensi.index');
+    Route::post('/presensi', [PresensiController::class, 'store'])->name('presensi.store');
 
     Route::get('/tugas', [TugasController::class, 'index'])->name('tugas.index');
 

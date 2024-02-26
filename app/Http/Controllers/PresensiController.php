@@ -13,4 +13,21 @@ class PresensiController extends Controller
 
         return view('absensiswa', compact('presensi'));
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'presensi' => ['required', 'in:HADIR,ABSEN,SAKIT,IZIN'],
+        ]);
+
+        $user = Auth::user();
+
+        assert(! is_null($user->student));
+
+        $user->student->presensi()->create([
+            'status' => $request->presensi
+        ]);
+
+        return to_route('presensi.index');
+    }
 }

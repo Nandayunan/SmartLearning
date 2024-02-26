@@ -173,17 +173,21 @@
                       <td>{{ Auth::user()->student->nis }}</td>
                       <td>{{ Auth::user()->name }}</td>
                       <td>
-                      <label class="radio-inline"><input type="radio" name="" value="Hadir">Hadir</label>
-                      <label class="radio-inline"><input type="radio" name="" value="Absen">Absen</label>
-                      <label class="radio-inline"><input type="radio" name="" value="Sakit">Sakit</label>
-                      <label class="radio-inline"><input type="radio" name="" value="Izin">Izin</label>
-
+                         <form method="post" action="{{ route('presensi.store') }}">
+                            @csrf
+                            <select name="presensi">
+                                <option value="HADIR">Hadir</option>
+                                <option value="ABSEN">Absen</option>
+                                <option value="SAKIT">Sakit</option>
+                                <option value="IZIN">Izin</option>
+                            </select>
+                            <button>Simpan</button>
+                        </form>
                       </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <button type="submit" class="btn btn-primary mt-4 col-md-2 offset-10">Simpan Data</button>
             </form>
 
             </div>
