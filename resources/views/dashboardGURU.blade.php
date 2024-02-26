@@ -31,7 +31,6 @@
     <div class="page">
       <!-- Navbar -->
       @include('partials.header-brand')
-      @include('partials.header-navigation')
       <div class="page-wrapper">
         <!-- Page header -->
         <div class="page-header d-print-none">
