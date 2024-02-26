@@ -4,7 +4,9 @@ namespace App\Console\Commands;
 
 use App\Models\Student;
 use App\Models\User;
+use App\Models\Subject;
 use App\Models\Presensi;
+use App\Models\Teacher;
 use Illuminate\Console\Command;
 
 class AddInternalData extends Command
@@ -39,6 +41,10 @@ class AddInternalData extends Command
             'nis' => '1234568999',
         ]);
 
+        Student::first()
+            ->belongsToMany(Subject::class, 'student_subject', 'student_id', 'subject_id')
+            ->attach(Subject::first()->id);
+
         Presensi::create([
             'student_id' => $user->id,
             'status' => 'HADIR',
@@ -46,6 +52,17 @@ class AddInternalData extends Command
         Presensi::create([
             'student_id' => $user->id,
             'status' => 'SAKIT',
+        ]);
+
+        $user2 = User::create([
+            'name' => 'Asep Suryana',
+            'email' => 'asep@mail.com',
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Teacher::create([
+            'id' => $user2->id,
+            'nuptk' => '193129302193021'
         ]);
     }
 }

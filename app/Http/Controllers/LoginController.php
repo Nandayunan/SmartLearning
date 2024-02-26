@@ -28,6 +28,12 @@ class LoginController extends Controller
             return to_route('login.index')->withErrors('invalid credentials');
         }
 
+        $user = Auth::user();
+
+        if (is_null($user->student)) {
+            return to_route('dashboardTeacher.index');
+        }
+
         return to_route('dashboard.index');
     }
 }

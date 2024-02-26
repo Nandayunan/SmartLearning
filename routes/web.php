@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardTeacherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PresensiController;
@@ -37,6 +38,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/tugas', [TugasController::class, 'index'])->name('tugas.index');
 
     Route::get('/tugas/submit', [TugasSubmitController::class, 'index'])->name('tugasSubmit.index');
+
+    Route::get('/dashboard-guru', [DashboardTeacherController::class, 'index'])->name('dashboardTeacher.index');
 });
-
-
