@@ -116,7 +116,7 @@
   <!-- Rekap Absensi -->
 <div class="col-xl-3 col-md-6 mb-4 ">
     <div class="card border-left-warning shadow h-100 py-2">
-    <a href="#" style="text-decoration:none;" data-toggle="modal" data-target="#comingModal">
+    <a href="{{ route('rekapAbsensi.index') }}" style="text-decoration:none;" data-toggle="modal" data-target="#comingModal">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
