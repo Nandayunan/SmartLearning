@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Subject;
 use App\Models\Presensi;
 use App\Models\Teacher;
+use App\Models\Kelas;
 use Illuminate\Console\Command;
 
 class AddInternalData extends Command
@@ -36,9 +37,52 @@ class AddInternalData extends Command
             'password' => bcrypt('12345678'),
         ]);
 
+        $user2 = User::create([
+            'name' => 'Asep Suryana',
+            'email' => 'asep@mail.com',
+            'password' => bcrypt('12345678'),
+        ]);
+
+        Teacher::create([
+            'id' => $user2->id,
+            'nuptk' => '193129302193021'
+        ]);
+
         Student::create([
             'id' => $user->id,
             'nis' => '1234568999',
+            'teacher_id' => $user2->id,
+        ]);
+
+        Subject::insert([
+            [
+                'name' => 'Matematika',
+                'tahun_ajaran' => 2024,
+                'semester' => 2,
+                'kkm' => 75,
+                'teacher_id' => $user2->id
+            ],
+            [
+                'name' => 'Bahasa Indonesia',
+                'tahun_ajaran' => 2024,
+                'semester' => 2,
+                'kkm' => 75,
+                'teacher_id' => $user2->id
+            ],
+            [
+                'name' => 'Bahasa Inggris',
+                'tahun_ajaran' => 2024,
+                'semester' => 2,
+                'kkm' => 75,
+                'teacher_id' => $user2->id
+            ],
+            [
+                'name' => 'Ilmu Pengetahuan Alam',
+                'tahun_ajaran' => 2024,
+                'semester' => 2,
+                'kkm' => 75,
+                'teacher_id' => $user2->id
+            ],
         ]);
 
         Student::first()
@@ -54,15 +98,10 @@ class AddInternalData extends Command
             'status' => 'SAKIT',
         ]);
 
-        $user2 = User::create([
-            'name' => 'Asep Suryana',
-            'email' => 'asep@mail.com',
-            'password' => bcrypt('12345678'),
+        Kelas::create([
+            'teacher_id' => $user2->id
         ]);
 
-        Teacher::create([
-            'id' => $user2->id,
-            'nuptk' => '193129302193021'
-        ]);
+
     }
 }

@@ -13,31 +13,6 @@ class SubjectSeeder extends Seeder
      */
     public function run(): void
     {
-        Subject::insert([
-            [
-                'name' => 'Matematika',
-                'tahun_ajaran' => 2024,
-                'semester' => 2,
-                'kkm' => 75
-            ],
-            [
-                'name' => 'Bahasa Indonesia',
-                'tahun_ajaran' => 2024,
-                'semester' => 2,
-                'kkm' => 75
-            ],
-            [
-                'name' => 'Bahasa Inggris',
-                'tahun_ajaran' => 2024,
-                'semester' => 2,
-                'kkm' => 75
-            ],
-            [
-                'name' => 'Ilmu Pengetahuan Alam',
-                'tahun_ajaran' => 2024,
-                'semester' => 2,
-                'kkm' => 75
-            ],
-        ]);
+
     }
 }
