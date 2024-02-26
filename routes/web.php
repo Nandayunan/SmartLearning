@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardTeacherController;
+use App\Http\Controllers\DetailKelasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\NilaiContoller;
@@ -48,9 +49,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/rekap-absensi', [RekapAbsensiController::class, 'index'])->name('rekapAbsensi.index');
 
-    Route::get('/dev-view', function () {
-        return view('rekapabsensi');
-    });
+    Route::get('/detail-kelas', [DetailKelasController::class, 'index'])->name('detailKelas.index');
 });
 
 

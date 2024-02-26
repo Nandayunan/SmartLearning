@@ -100,7 +100,8 @@ class AddInternalData extends Command
         ]);
 
         Kelas::create([
-            'teacher_id' => $user2->id
+            'teacher_id' => $user2->id,
+            'name' => 'Ruang 22'
         ]);
 
         Nilai::create([
